@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="100%" height="100%" fill="#4983b7"/>
+  <rect width="100%" height="100%" fill="none" stroke="#ffffff" stroke-opacity="0.25" stroke-width="4"/>
+  <text x="50%" y="50%" font-family="Arial, Helvetica, sans-serif" font-size="%" fill="#ffffff" fill-opacity="0.9" text-anchor="middle" dominant-baseline="middle">GALLERY PHOTO 4 — replace</text>
+</svg>
