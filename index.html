@@ -147,40 +147,41 @@
     </div>
 
     <!--
-      Gallery photos are hotlinked from Unsplash (images.unsplash.com), chosen to
-      show each service actually in progress. script.js swaps each one to its
-      local SVG placeholder (data-fallback) if the photo ID ever fails to load,
-      so a bad hotlink degrades to a labeled placeholder, never a broken icon.
+      Gallery photos are hotlinked, chosen to show each service actually in
+      progress. script.js swaps each one to its local SVG placeholder
+      (data-fallback) if the photo ever fails to load, so a bad hotlink
+      degrades to a labeled placeholder, never a broken icon.
 
-      These photo IDs were selected from this session without live access to
-      verify the exact CDN hash — if one doesn't load, the source photo page
-      is linked above each <img> so you can grab the correct direct URL in
-      seconds (open the page -> Download -> copy image address).
+      Slots 1, 2, 4, 5, 6 use Pexels (images.pexels.com/photos/<id>/...): the
+      numeric ID in a Pexels page URL is the same ID used in its direct CDN
+      URL, so these were read straight from real Pexels search results, not
+      guessed — the source page is linked above each <img> for a sanity check.
+      Slot 3 is an Unsplash hotlink confirmed working by the client.
     -->
     <div class="gallery-grid">
-      <!-- Source: https://unsplash.com/photos/car-service-worker-wiping-vehicle-body-with-microfiber-examining-glossy-coating-after-the-polishing-procedure-professional-car-detailing-and-maintenance-concept-ucFR96aO1xI -->
+      <!-- Source: https://www.pexels.com/photo/a-person-buffing-a-car-5233261/ -->
       <button class="gallery-item" data-caption="Paint correction — machine polishing in progress">
-        <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&amp;fit=crop&amp;w=800&amp;q=80" data-fallback="assets/img/gallery-1.svg" alt="Detailer machine-polishing a car's paint" loading="lazy" />
+        <img src="https://images.pexels.com/photos/5233261/pexels-photo-5233261.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" data-fallback="assets/img/gallery-1.svg" alt="Detailer buffing a car's paint with a polisher" loading="lazy" />
       </button>
-      <!-- Source: https://unsplash.com/photos/the-interior-of-a-car-is-clean-and-ready-to-be-used-A2etZFKGXA0 -->
+      <!-- Source: https://www.pexels.com/photo/hand-holding-a-car-vacuum-cleaner-5233264/ -->
       <button class="gallery-item" data-caption="Full interior detail — deep clean in progress">
-        <img src="https://images.unsplash.com/photo-1600661653561-629509216228?auto=format&amp;fit=crop&amp;w=800&amp;q=80" data-fallback="assets/img/gallery-2.svg" alt="Detailer vacuuming and steam-cleaning a car interior" loading="lazy" />
+        <img src="https://images.pexels.com/photos/5233264/pexels-photo-5233264.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" data-fallback="assets/img/gallery-2.svg" alt="Detailer vacuuming a car interior" loading="lazy" />
       </button>
-      <!-- Source: https://unsplash.com/photos/a-car-is-being-covered-in-soap-R0mrjI3ybGk -->
+      <!-- Source: https://unsplash.com/photos/a-car-is-being-covered-in-soap-R0mrjI3ybGk (confirmed working) -->
       <button class="gallery-item" data-caption="Exterior hand wash — foam wash in progress">
         <img src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&amp;fit=crop&amp;w=800&amp;q=80" data-fallback="assets/img/gallery-3.svg" alt="Car covered in foam during a hand wash" loading="lazy" />
       </button>
-      <!-- Source: https://unsplash.com/photos/red-surface-covered-with-small-water-droplets-eu-jDBjNmzw -->
+      <!-- Source: https://www.pexels.com/photo/water-droplets-on-a-white-car-6873177/ -->
       <button class="gallery-item" data-caption="Ceramic coating — water beading on treated paint">
-        <img src="https://images.unsplash.com/photo-1541348263662-e068662d82af?auto=format&amp;fit=crop&amp;w=800&amp;q=80" data-fallback="assets/img/gallery-4.svg" alt="Water beading on a ceramic-coated car surface" loading="lazy" />
+        <img src="https://images.pexels.com/photos/6873177/pexels-photo-6873177.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" data-fallback="assets/img/gallery-4.svg" alt="Water beading on a ceramic-coated car surface" loading="lazy" />
       </button>
-      <!-- Source: https://unsplash.com/photos/a-close-up-of-a-car-headlight-on-a-car-tL5jzE7K3BM -->
+      <!-- Source: https://www.pexels.com/photo/close-up-photography-of-car-headlight-999001/ -->
       <button class="gallery-item" data-caption="Headlight restoration — before &amp; after clarity">
-        <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&amp;fit=crop&amp;w=800&amp;q=80" data-fallback="assets/img/gallery-5.svg" alt="Restored, clear car headlight" loading="lazy" />
+        <img src="https://images.pexels.com/photos/999001/pexels-photo-999001.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" data-fallback="assets/img/gallery-5.svg" alt="Close-up of a restored, clear car headlight" loading="lazy" />
       </button>
-      <!-- Source: https://unsplash.com/photos/a-man-cleaning-car-with-microfiber-cloth-car-detailing-or-valeting-concept-selective-focus-8Cxroj1LoaA -->
+      <!-- Source: https://www.pexels.com/photo/close-up-photo-of-cleaning-of-car-7154632/ -->
       <button class="gallery-item" data-caption="Detailer at work — final hand-finish pass">
-        <img src="https://images.unsplash.com/photo-1607860108855-3d5a6a5aa1f2?auto=format&amp;fit=crop&amp;w=800&amp;q=80" data-fallback="assets/img/gallery-6.svg" alt="Detailer wiping down a car with a microfiber cloth" loading="lazy" />
+        <img src="https://images.pexels.com/photos/7154632/pexels-photo-7154632.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" data-fallback="assets/img/gallery-6.svg" alt="Detailer wiping down a car with a microfiber cloth" loading="lazy" />
       </button>
     </div>
   </div>

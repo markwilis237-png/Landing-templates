@@ -40,9 +40,9 @@ then visit `http://localhost:8000`.
    `.service-card` block to change the count.
 
 4. **Photos** — the demo hero and gallery images are hotlinked from Unsplash
-   (`images.unsplash.com/photo-...` URLs). For a real client site, download
-   the photos and self-host them instead of hotlinking (faster, and not
-   dependent on someone else's URL staying valid):
+   (`images.unsplash.com/photo-...`) and Pexels (`images.pexels.com/photos/<id>/...`).
+   For a real client site, download the photos and self-host them instead of
+   hotlinking (faster, and not dependent on someone else's URL staying valid):
    - Hero: the `data-hero-src` attribute on `<section id="hero">` in
      `index.html` — loaded via `initHeroImage()` in `script.js`.
    - Gallery: the `src` attribute on each `.gallery-item img`.
