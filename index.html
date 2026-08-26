@@ -45,7 +45,12 @@
 </header>
 
 <!-- ============ HERO ============ -->
-<section class="hero" id="hero" style="background-image: linear-gradient(180deg, rgba(10,25,45,0.75), rgba(10,25,45,0.85)), url('assets/img/hero-bg.svg');">
+<!--
+  Hero photo is hotlinked from Unsplash (images.unsplash.com) and loaded via
+  script.js with a fallback to the local SVG placeholder if the photo ID
+  ever changes or fails to load — see initHeroImage() in script.js.
+-->
+<section class="hero" id="hero" data-hero-src="https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" style="background-image: linear-gradient(180deg, rgba(10,25,45,0.75), rgba(10,25,45,0.85)), url('assets/img/hero-bg.svg');">
   <div class="container hero-inner">
     <p class="hero-eyebrow">⭐⭐⭐⭐⭐ Trusted by 500+ drivers in the Greater Portland Area</p>
     <h1 class="hero-title">Apex Mobile Detailing</h1>
@@ -141,24 +146,30 @@
       <p class="section-sub">Swap the images below for real before/after or job-site photos. Click any photo to view it larger.</p>
     </div>
 
+    <!--
+      Gallery photos are hotlinked from Unsplash (images.unsplash.com). Each
+      has data-fallback pointing at its local SVG placeholder — script.js
+      swaps to that automatically if a photo ID ever 404s, so a bad link
+      never shows a broken-image icon.
+    -->
     <div class="gallery-grid">
-      <button class="gallery-item" data-caption="Ceramic coating — Tesla Model 3, Portland OR">
-        <img src="assets/img/gallery-1.svg" alt="Ceramic coating — Tesla Model 3, Portland OR" loading="lazy" />
+      <button class="gallery-item" data-caption="Full interior detail — deep clean &amp; vacuum">
+        <img src="https://images.unsplash.com/photo-1494905998402-395d579af36f?auto=format&amp;fit=crop&amp;w=800&amp;q=80" data-fallback="assets/img/gallery-1.svg" alt="Full interior detail — deep clean and vacuum" loading="lazy" />
       </button>
-      <button class="gallery-item" data-caption="Full interior detail — Ford F-150, Beaverton OR">
-        <img src="assets/img/gallery-2.svg" alt="Full interior detail — Ford F-150, Beaverton OR" loading="lazy" />
+      <button class="gallery-item" data-caption="Exterior hand wash &amp; wax">
+        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&amp;fit=crop&amp;w=800&amp;q=80" data-fallback="assets/img/gallery-2.svg" alt="Exterior hand wash and wax" loading="lazy" />
       </button>
-      <button class="gallery-item" data-caption="Paint correction — BMW 3 Series, before &amp; after">
-        <img src="assets/img/gallery-3.svg" alt="Paint correction — BMW 3 Series, before and after" loading="lazy" />
+      <button class="gallery-item" data-caption="Paint correction — swirl &amp; scratch removal">
+        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&amp;fit=crop&amp;w=800&amp;q=80" data-fallback="assets/img/gallery-3.svg" alt="Paint correction — swirl and scratch removal" loading="lazy" />
       </button>
-      <button class="gallery-item" data-caption="Headlight restoration — Subaru Outback">
-        <img src="assets/img/gallery-4.svg" alt="Headlight restoration — Subaru Outback" loading="lazy" />
+      <button class="gallery-item" data-caption="Ceramic coating — hydrophobic finish">
+        <img src="https://images.unsplash.com/photo-1541348263662-e068662d82af?auto=format&amp;fit=crop&amp;w=800&amp;q=80" data-fallback="assets/img/gallery-4.svg" alt="Ceramic coating — hydrophobic finish" loading="lazy" />
       </button>
-      <button class="gallery-item" data-caption="Hand wash &amp; wax — Audi Q5, Lake Oswego OR">
-        <img src="assets/img/gallery-5.svg" alt="Hand wash and wax — Audi Q5, Lake Oswego OR" loading="lazy" />
+      <button class="gallery-item" data-caption="Headlight restoration">
+        <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&amp;fit=crop&amp;w=800&amp;q=80" data-fallback="assets/img/gallery-5.svg" alt="Headlight restoration" loading="lazy" />
       </button>
-      <button class="gallery-item" data-caption="Fleet detailing — local delivery van fleet">
-        <img src="assets/img/gallery-6.svg" alt="Fleet detailing — local delivery van fleet" loading="lazy" />
+      <button class="gallery-item" data-caption="Fleet &amp; commercial detailing">
+        <img src="https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&amp;fit=crop&amp;w=800&amp;q=80" data-fallback="assets/img/gallery-6.svg" alt="Fleet and commercial detailing" loading="lazy" />
       </button>
     </div>
   </div>

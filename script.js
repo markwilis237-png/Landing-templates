@@ -6,6 +6,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   initYear();
   initMobileNav();
+  initHeroImage();
+  initImageFallbacks();
   initGalleryLightbox();
   initContactForm();
 });
@@ -14,6 +16,30 @@ document.addEventListener('DOMContentLoaded', () => {
 function initYear() {
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
+}
+
+/* ---------- Hero background photo (with SVG fallback) ---------- */
+function initHeroImage() {
+  const hero = document.getElementById('hero');
+  const src = hero?.dataset.heroSrc;
+  if (!hero || !src) return;
+
+  const preload = new Image();
+  preload.onload = () => {
+    hero.style.backgroundImage =
+      `linear-gradient(180deg, rgba(10,25,45,0.75), rgba(10,25,45,0.85)), url('${src}')`;
+  };
+  // On error, do nothing — the local SVG set inline in the HTML stays as the background.
+  preload.src = src;
+}
+
+/* ---------- Hotlinked photos: fall back to local SVG placeholder on error ---------- */
+function initImageFallbacks() {
+  document.querySelectorAll('img[data-fallback]').forEach((img) => {
+    img.addEventListener('error', () => {
+      img.src = img.dataset.fallback;
+    }, { once: true });
+  });
 }
 
 /* ---------- Mobile nav toggle ---------- */

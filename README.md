@@ -39,14 +39,24 @@ then visit `http://localhost:8000`.
    emoji icon, heading, and description for each. Delete or duplicate a
    `.service-card` block to change the count.
 
-4. **Photos** — replace files in `assets/img/` with real photos, **keeping
-   the same filenames** (or update the `src` attributes in `index.html`):
-   - `hero-bg.svg` → wide background photo, ~1600×900
-   - `gallery-1.svg` … `gallery-6.svg` → square-ish job/before-after photos
-   - `avatar-1.svg` … `avatar-3.svg` → customer headshots (optional; a
-     generic icon works fine too)
-   - `logo-placeholder.svg` → your logo (SVG or PNG, transparent background)
-   - `og-image.svg` → optional social share preview image (1200×630)
+4. **Photos** — the demo hero and gallery images are hotlinked from Unsplash
+   (`images.unsplash.com/photo-...` URLs). For a real client site, download
+   the photos and self-host them instead of hotlinking (faster, and not
+   dependent on someone else's URL staying valid):
+   - Hero: the `data-hero-src` attribute on `<section id="hero">` in
+     `index.html` — loaded via `initHeroImage()` in `script.js`.
+   - Gallery: the `src` attribute on each `.gallery-item img`.
+   - Every hotlinked image has a local SVG fallback (`assets/img/*.svg`,
+     wired via `data-fallback` / `initImageFallbacks()` in `script.js`) that
+     it swaps to automatically if the photo URL ever fails to load — so a
+     dead link degrades to a labeled placeholder instead of a broken-image
+     icon. Keep those SVGs in place, or replace them with your own photos:
+     - `hero-bg.svg` → wide background photo, ~1600×900
+     - `gallery-1.svg` … `gallery-6.svg` → square-ish job/before-after photos
+     - `avatar-1.svg` … `avatar-3.svg` → customer headshots (optional; a
+       generic icon works fine too)
+     - `logo-placeholder.svg` → your logo (SVG or PNG, transparent background)
+     - `og-image.svg` → optional social share preview image (1200×630)
 
 5. **Testimonials** — replace the 3 quotes, names, and cities in the
    `#testimonials` section with real reviews. Always get permission before
