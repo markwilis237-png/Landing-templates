@@ -272,7 +272,20 @@ button { font-family: inherit; cursor: pointer; }
   overflow: hidden;
   background: var(--color-navy-mid);
 }
-.product-photo img { width: 100%; height: 100%; object-fit: cover; }
+.product-photo[data-gallery] { cursor: pointer; }
+.product-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
+.product-photo[data-gallery]:hover img { transform: scale(1.05); }
+.gallery-badge {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(8, 22, 39, 0.78);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 999px;
+}
 .product-badge {
   position: absolute;
   top: 12px;
@@ -416,6 +429,53 @@ button { font-family: inherit; cursor: pointer; }
 .form-note.success { color: var(--color-success); }
 .form-note.error { color: var(--color-error); }
 
+/* ---------- Product photo lightbox ---------- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 22, 39, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 24px;
+}
+.lightbox[hidden] { display: none; }
+.lightbox-figure { max-width: 900px; width: 100%; margin: 0; text-align: center; }
+.lightbox-figure img { border-radius: 10px; max-height: 78vh; margin: 0 auto; }
+.lightbox-figure figcaption { color: #fff; margin-top: 14px; font-size: 0.95rem; }
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  border: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+}
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  border: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-size: 1.6rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lightbox-nav:hover, .lightbox-close:hover { background: rgba(255,255,255,0.24); }
+.lightbox-prev { left: 20px; }
+.lightbox-next { right: 20px; }
+
 /* ---------- Footer ---------- */
 .site-footer { background: var(--color-navy-dark); color: #cdd8ea; padding: 56px 0 0; }
 .footer-inner {
@@ -501,4 +561,9 @@ button { font-family: inherit; cursor: pointer; }
   .hero { padding: 76px 0 56px; }
   .sticky-text { display: none; }
   .sticky-btn { padding: 14px; border-radius: 50%; }
+
+  .lightbox-nav { width: 38px; height: 38px; font-size: 1.3rem; }
+  .lightbox-prev { left: 8px; }
+  .lightbox-next { right: 8px; }
+  .lightbox-close { top: 12px; right: 12px; width: 36px; height: 36px; }
 }

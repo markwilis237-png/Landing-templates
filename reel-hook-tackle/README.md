@@ -43,10 +43,11 @@ then visit `http://localhost:8000/reel-hook-tackle/`.
    since the individual mechanical/cosmetic grades aren't visually
    distinguishable — swap in a closer per-reel photo from
    `assets/img/more-photos/` if you want a tighter match per condition
-   grade. Every product's remaining angles (group shots, close-ups of
-   branding, line spooling) are kept in `assets/img/more-photos/` — not
-   currently used on the page, but there if you want a lightbox gallery
-   later.
+   grade.
+
+   Every product card now also opens a **photo gallery** (click the photo)
+   showing extra angles from the same upload — see "Photo galleries"
+   below for how that's wired up and how to add more.
 
 2. **Logo** — replace `assets/img/logo-placeholder.svg` with your real
    fish + rod + hook logo (used in the header, footer, and favicon).
@@ -65,6 +66,29 @@ then visit `http://localhost:8000/reel-hook-tackle/`.
    yet. In `script.js`, inside `initContactForm()`, wire it to a form
    backend (e.g. [Formspree](https://formspree.io)) or your own API —
    see the comment directly above the submit handler for example code.
+
+## Photo galleries
+
+Every product photo is clickable and opens a lightbox with prev/next
+navigation (arrow keys work too) cycling through a few extra angles of
+that same item, pulled from `assets/img/more-photos/`. This is **not**
+a "here are more items" gallery — every photo in it is the same physical
+reel/rod/butt as the main card, just from a different angle, since a full
+review of all 62 uploaded photos found no additional distinct products
+beyond the 10 already listed (photo counts per item matched the listed
+quantities exactly: 4 Tiagra 50W, 5 Tiagra 30W, 2 Saragosa, 5 Tallica, 6
+Winthrop butts, 8 Penn fleet reels).
+
+To add more photos to a card's gallery: open `index.html`, find that
+product's `<div class="product-photo" data-gallery="...">`, and append
+another comma-separated path (main photo first, so it's what shows on
+the card itself). The 4 Penn fleet cards intentionally share one gallery
+of all fleet photos, since the reels can't be told apart by condition
+grade in a photo.
+
+Only a curated subset (~20 of the 49 extra photos) is wired into
+galleries today — the rest stay in `assets/img/more-photos/` unused,
+available to add the same way if you want a deeper gallery on any item.
 
 ## Netlify setup
 
@@ -95,9 +119,9 @@ show the actual Reel Hook Tackle catalog, not the Apex template.
 - Sticky header with logo, nav, and a call CTA
 - Hero with tagline, description, and CTAs (shop catalog / Messenger)
 - Trust bar (new & pre-owned, honest condition notes, fair prices, shipping)
-- Product catalog grouped into 4 categories, with photo, badges (condition/
-  qty), specs, price, and an "Inquire" button that pre-fills the contact
-  form's item dropdown
+- Product catalog grouped into 4 categories, with photo (click for a
+  multi-angle gallery), badges (condition/qty), specs, price, and an
+  "Inquire" button that pre-fills the contact form's item dropdown
 - Contact section: phone, email, Messenger, location, map, and an inquiry
   form
 - Footer with quick links and contact info

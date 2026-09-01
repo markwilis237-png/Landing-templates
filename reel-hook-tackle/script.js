@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initYear();
   initMobileNav();
   initInquiryLinks();
+  initProductGallery();
   initContactForm();
 });
 
@@ -47,6 +48,72 @@ function initInquiryLinks() {
         if (match) itemSelect.value = itemName;
       }
     });
+  });
+}
+
+/* ---------- Product photo galleries (lightbox with prev/next) ---------- */
+function initProductGallery() {
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxCaption = document.getElementById('lightbox-caption');
+  const closeBtn = document.getElementById('lightbox-close');
+  const prevBtn = document.getElementById('lightbox-prev');
+  const nextBtn = document.getElementById('lightbox-next');
+  const photoEls = document.querySelectorAll('.product-photo[data-gallery]');
+
+  if (!lightbox || !lightboxImg || !closeBtn || !photoEls.length) return;
+
+  let currentImages = [];
+  let currentName = '';
+  let currentIndex = 0;
+
+  function render() {
+    lightboxImg.src = currentImages[currentIndex];
+    lightboxImg.alt = `${currentName} — photo ${currentIndex + 1} of ${currentImages.length}`;
+    lightboxCaption.textContent = `${currentName} — ${currentIndex + 1} / ${currentImages.length}`;
+  }
+
+  function open(images, name, startIndex) {
+    currentImages = images;
+    currentName = name;
+    currentIndex = startIndex;
+    render();
+    lightbox.hidden = false;
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close() {
+    lightbox.hidden = true;
+    lightboxImg.src = '';
+    document.body.style.overflow = '';
+  }
+
+  function step(delta) {
+    currentIndex = (currentIndex + delta + currentImages.length) % currentImages.length;
+    render();
+  }
+
+  photoEls.forEach((el) => {
+    const images = el.dataset.gallery.split(',').map((src) => src.trim()).filter(Boolean);
+    const name = el.dataset.galleryName || '';
+    if (!images.length) return;
+
+    el.addEventListener('click', () => open(images, name, 0));
+  });
+
+  closeBtn.addEventListener('click', close);
+  prevBtn.addEventListener('click', () => step(-1));
+  nextBtn.addEventListener('click', () => step(1));
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) close();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (lightbox.hidden) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') step(-1);
+    if (e.key === 'ArrowRight') step(1);
   });
 }
 
