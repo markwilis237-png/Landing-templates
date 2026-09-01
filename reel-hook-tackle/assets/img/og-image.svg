@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Reel Hook Tackle social preview">
+  <defs>
+    <linearGradient id="og" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#173766"/>
+      <stop offset="100%" stop-color="#081627"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#og)"/>
+  <g transform="translate(600.0,240)">
+    <circle r="70" fill="none" stroke="#ffffff" stroke-width="5"/>
+    <circle r="70" fill="none" stroke="#c9a45c" stroke-width="5" stroke-dasharray="10 12"/>
+    <path d="M -24 10 C -24 -24, 24 -24, 24 10 C 24 34, 6 34, -2 18 C -10 8, -18 4, -24 10 Z"
+          fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="600.0" y="380" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="54" fill="#ffffff">REEL HOOK TACKLE</text>
+  <text x="600.0" y="428" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="26" letter-spacing="2" fill="#c9a45c">QUALITY GEAR. BETTER FISHING.</text>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="Navy ocean-themed background">
+  <defs>
+    <linearGradient id="hbg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a1a30"/>
+      <stop offset="55%" stop-color="#173766"/>
+      <stop offset="100%" stop-color="#0a1a30"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#hbg)"/>
+  <g opacity="0.12" stroke="#ffffff" stroke-width="3" fill="none">
+    <path d="M0 620 C 220 560, 420 680, 640 610 S 1060 560, 1280 630 S 1600 590, 1600 620" />
+    <path d="M0 720 C 260 660, 480 760, 720 700 S 1140 660, 1400 720 S 1600 700, 1600 700" />
+  </g>
+  <g transform="translate(1340,170)" opacity="0.15">
+    <circle r="120" fill="none" stroke="#c9a45c" stroke-width="6"/>
+    <path d="M -40 20 C -40 -40, 40 -40, 40 20 C 40 58, 8 58, -6 32 C -18 14, -30 6, -40 20 Z"
+          fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
