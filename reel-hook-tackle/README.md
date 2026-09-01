@@ -59,6 +59,30 @@ then visit `http://localhost:8000/reel-hook-tackle/`.
    backend (e.g. [Formspree](https://formspree.io)) or your own API —
    see the comment directly above the submit handler for example code.
 
+## Netlify setup
+
+This repo's existing Netlify site ("mark-web-demo") is linked to the whole
+repo with its base/publish directory at the repo root, which serves the
+unrelated Apex Mobile Detailing template — **not** this project. Reel Hook
+Tackle needs its own Netlify site:
+
+1. In the Netlify dashboard, **Add new site → Import an existing project**
+   and pick this GitHub repo.
+2. Under **Site settings → Build & deploy → Build settings**, set:
+   - **Base directory:** `reel-hook-tackle`
+   - **Publish directory:** `reel-hook-tackle` (or `.` if Netlify already
+     scopes paths relative to the base directory)
+   - **Build command:** leave blank — this is a static site, no build step
+3. Give the new site a distinct name (e.g. `reel-hook-tackle`) under
+   **Site settings → General → Site details → Change site name**, so its
+   URL doesn't collide with `mark-web-demo`.
+4. `netlify.toml` in this folder already declares `publish = "."` for when
+   the base directory is set to `reel-hook-tackle`, so no further config
+   should be needed once the site is linked.
+
+Once linked, that site's deploy previews for PRs touching this folder will
+show the actual Reel Hook Tackle catalog, not the Apex template.
+
 ## Sections included
 
 - Sticky header with logo, nav, and a call CTA
