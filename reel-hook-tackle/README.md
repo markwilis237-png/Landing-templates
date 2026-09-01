@@ -6,10 +6,11 @@ Los Angeles, CA). Plain HTML/CSS/JS — no build step, no framework.
 ## Files
 
 ```
-index.html      All page content and structure
-styles.css      All styling — navy/white theme, colors as CSS variables
-script.js       Mobile nav, "Inquire" buttons, contact form validation
-assets/img/     Placeholder images (SVGs) — swap for real photos
+index.html            All page content and structure
+styles.css            All styling — navy/white theme, colors as CSS variables
+script.js             Mobile nav, "Inquire" buttons, contact form validation
+assets/img/           Real product photos (product-N-*.jpeg) + brand SVGs
+assets/img/more-photos/  Extra angles of every item, not yet used on the page
 ```
 
 ## Quick start
@@ -22,24 +23,30 @@ then visit `http://localhost:8000/reel-hook-tackle/`.
 
 ## To finish setup
 
-1. **Product photos** — this build could not pull your chat-attached photos
-   into files automatically. Every product card uses a labeled navy/gold
-   SVG placeholder in `assets/img/`. Replace the file for each product with
-   your real photo **using the same filename** so nothing else needs to
-   change:
-   - `product-1-tiagra-50-lrs.svg` → Shimano Tiagra 50 LRS
-   - `product-2-tiagra-30w.svg` → Shimano Tiagra 30W
-   - `product-3-saragosa-10000.svg` → Shimano Saragosa 10000
-   - `product-4-tallica-a-16ii.svg` → Shimano Tallica A 16II
-   - `product-5-penn-intl-30-wide.svg` → Penn International 30 Wide Combo
-   - `product-6-winthrop-terminator.svg` → Winthrop Terminator Butt
-   - `product-7a-penn-30visw-good.svg` → Penn 30VISW (good condition)
-   - `product-7b-penn-30visw-clutch.svg` → Penn 30VISW (needs clutch)
-   - `product-7c-penn-20visx.svg` → Penn 20VISX
-   - `product-7d-penn-16visx.svg` → Penn 16VISX
+1. **Product photos** — done. Every product card now uses a real photo,
+   picked from the full set uploaded to this branch and matched to the
+   right listing by the branding/text visible in each shot (e.g. "TIAGRA
+   50W" vs. "TIAGRA 30W", "SARAGOSA", "T-LICA 16II", "INTERNATIONAL
+   30VISW", the Winthrop butt count). Filenames:
+   - `product-1-tiagra-50-lrs.jpeg` → Shimano Tiagra 50 LRS
+   - `product-2-tiagra-30w.jpeg` → Shimano Tiagra 30W
+   - `product-3-saragosa-10000.jpeg` → Shimano Saragosa 10000
+   - `product-4-tallica-a-16ii.jpeg` → Shimano Tallica A 16II
+   - `product-5-penn-intl-30-wide.jpeg` → Penn International 30 Wide Combo
+   - `product-6-winthrop-terminator.jpeg` → Winthrop Terminator Butt
+   - `product-7a-penn-30visw-good.jpeg` → Penn 30VISW (good condition)
+   - `product-7b-penn-30visw-clutch.jpeg` → Penn 30VISW (needs clutch)
+   - `product-7c-penn-20visx.jpeg` → Penn 20VISX
+   - `product-7d-penn-16visx.jpeg` → Penn 16VISX
 
-   If your real photo is a `.jpg`/`.png`/`.webp`, update the matching
-   `src="assets/img/...svg"` in `index.html` to the new extension.
+   The Penn fleet photos (7a–7d) are shared group shots of the fleet,
+   since the individual mechanical/cosmetic grades aren't visually
+   distinguishable — swap in a closer per-reel photo from
+   `assets/img/more-photos/` if you want a tighter match per condition
+   grade. Every product's remaining angles (group shots, close-ups of
+   branding, line spooling) are kept in `assets/img/more-photos/` — not
+   currently used on the page, but there if you want a lightbox gallery
+   later.
 
 2. **Logo** — replace `assets/img/logo-placeholder.svg` with your real
    fish + rod + hook logo (used in the header, footer, and favicon).
@@ -96,9 +103,3 @@ show the actual Reel Hook Tackle catalog, not the Apex template.
 - Footer with quick links and contact info
 - Sticky Call / Message buttons (bottom-right, all pages/scroll positions)
 
-## More products coming
-
-Items 6 (Winthrop Terminator Butts) and 7 (Penn International Reel Fleet)
-are already built out with full pricing/specs — only their photos are
-placeholders, pending the photos you said you'd send in a follow-up
-message.
