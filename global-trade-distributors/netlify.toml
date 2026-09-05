@@ -5,6 +5,8 @@
 
 [build]
   # No build step — plain static HTML/CSS/JS, multi-page (each .html file
-  # is served directly at its own path, e.g. /about.html).
+  # is served directly at its own path, e.g. /about.html). The "command"
+  # key is intentionally omitted (an empty string can make some Netlify
+  # build images treat it as an invalid/failing build command) rather
+  # than left blank.
   publish = "."
-  command = ""
