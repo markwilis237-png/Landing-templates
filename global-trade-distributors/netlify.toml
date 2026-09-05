@@ -1,0 +1,10 @@
+# Netlify config for the Global Trade Distributors site specifically.
+# Intended for a dedicated Netlify site whose "Base directory" is set to
+# global-trade-distributors/ (see README.md "Netlify setup" section) —
+# NOT for the repo-root site or any other template in this repo.
+
+[build]
+  # No build step — plain static HTML/CSS/JS, multi-page (each .html file
+  # is served directly at its own path, e.g. /about.html).
+  publish = "."
+  command = ""

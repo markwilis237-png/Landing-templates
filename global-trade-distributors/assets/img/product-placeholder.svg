@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <rect width="400" height="300" fill="#f4f7fb"/>
+  <rect x="1" y="1" width="398" height="298" fill="none" stroke="#dfe6f0" stroke-width="2"/>
+  <g fill="none" stroke="#9fb0ca" stroke-width="2.5">
+    <rect x="140" y="105" width="120" height="90" rx="4"/>
+    <path d="M140 130 L200 100 L260 130"/>
+    <line x1="200" y1="100" x2="200" y2="130"/>
+  </g>
+  <text x="200" y="225" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="600" fill="#5c6b80">Product Photo Placeholder</text>
+</svg>

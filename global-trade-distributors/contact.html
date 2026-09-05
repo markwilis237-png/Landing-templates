@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact &amp; Request a Quote | Global Trade Distributors</title>
+<meta name="description" content="Contact Global Trade Distributors to request a wholesale quote, ask about a product, or reach our sourcing team by phone, email, or WhatsApp." />
+
+<!-- ============================================================
+     CUSTOMIZE THIS TEMPLATE
+     Search for these markers to find everything you need to edit:
+       [00000000] (company number), [Address Placeholder], phone
+       numbers, email, WhatsApp link, and product photos in
+       assets/img/. See README.md for the full customization checklist.
+     ============================================================ -->
+
+<link rel="icon" href="assets/img/logo-placeholder.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<!-- ============ HEADER / NAV ============ -->
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <a href="index.html" class="brand">
+      <img src="assets/img/logo-placeholder.svg" alt="Global Trade Distributors logo" class="brand-logo" />
+      <span class="brand-text">
+        <span class="brand-name">Global Trade Distributors</span>
+        <span class="brand-tagline">Global B2B Sourcing &amp; Wholesale Distribution</span>
+      </span>
+    </a>
+
+    <nav class="main-nav" id="main-nav">
+      <a href="index.html">Home</a>
+      <div class="nav-dropdown" id="nav-categories">
+        <button type="button" class="nav-dropdown-toggle">Categories <span class="nav-dropdown-caret">&#9662;</span></button>
+        <div class="nav-dropdown-menu">
+          <a href="commercial-equipment-machinery.html">⚙️ Commercial Equipment &amp; Machinery</a>
+          <a href="packaging-printing.html">📦 Packaging &amp; Printing</a>
+          <a href="material-handling.html">🏗️ Material Handling</a>
+          <a href="luxury-travel-equipment.html">🧳 Luxury Travel Equipment&rsquo;s</a>
+          <a href="vehicle-parts-accessories.html">🚗 Vehicle Parts &amp; Accessories</a>
+          <a href="metals-metal-scrap.html">🔩 Metals &amp; Metal Scrap</a>
+          <a href="construction-building-machinery.html">🧱 Construction &amp; Building Machinery</a>
+          <a href="vehicles-transportation.html">🚚 Vehicles &amp; Transportation</a>
+          <a href="agricultural-machinery-equipment.html">🚜 Agricultural Machinery &amp; Equipment</a>
+        </div>
+      </div>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html#quote-form" class="nav-cta">Request a Quote</a>
+    </nav>
+
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="page-banner" style="background-image:url('assets/img/hero-bg.svg');">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span class="current">Contact</span></div>
+    <h1>Get in Touch</h1>
+    <p>Request a quote, ask about a product, or get in touch with our sourcing team &mdash; we typically respond within 1 business day.</p>
+  </div>
+</section>
+
+<section class="section" id="quote-form">
+  <div class="container contact-grid">
+    <div class="contact-info">
+      <p class="eyebrow">Contact Details</p>
+      <h2>Speak With Our Team</h2>
+      <p class="section-sub">Reach us directly, or fill out the quote request form and we'll get back to you with pricing and lead times.</p>
+
+      <div class="contact-methods">
+        <div class="contact-method">
+          <strong>Phone</strong>
+          <a href="tel:+440000000000">+44 (0) 000 000 0000</a>
+        </div>
+        <div class="contact-method">
+          <strong>Email</strong>
+          <a href="mailto:sales@globaltradedistributors.com">sales@globaltradedistributors.com</a>
+        </div>
+        <div class="contact-method">
+          <strong>WhatsApp</strong>
+          <a href="https://wa.me/440000000000" target="_blank" rel="noopener">Message Us</a>
+        </div>
+        <div class="contact-method">
+          <strong>Head Office</strong>
+          <span class="value">[Address Placeholder], United Kingdom</span>
+        </div>
+      </div>
+
+      <div class="map-embed">
+        <!--
+          MAP PLACEHOLDER: replace the src below with your own Google Maps embed.
+          Get yours at https://maps.google.com -> Share -> Embed a map -> copy the src URL.
+        -->
+        <iframe
+          title="Global Trade Distributors location map"
+          src="https://www.google.com/maps?q=London,+UK&output=embed"
+          width="100%"
+          height="300"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+
+    <form class="quote-form" id="contact-form" data-validate novalidate>
+      <h3>Request a Quote</h3>
+
+      <div class="form-row-group">
+        <div class="form-row">
+          <label for="c-name">Full Name</label>
+          <input type="text" id="c-name" name="name" placeholder="Jane Smith" required />
+          <span class="form-error" data-error-for="name"></span>
+        </div>
+        <div class="form-row">
+          <label for="c-email">Email Address</label>
+          <input type="email" id="c-email" name="email" placeholder="jane@company.com" required />
+          <span class="form-error" data-error-for="email"></span>
+        </div>
+      </div>
+
+      <div class="form-row-group">
+        <div class="form-row">
+          <label for="c-company">Company Name</label>
+          <input type="text" id="c-company" name="company" placeholder="Your Company Ltd" />
+        </div>
+        <div class="form-row">
+          <label for="c-phone">Phone Number</label>
+          <input type="tel" id="c-phone" name="phone" placeholder="+1 555 000 0000" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label for="c-category">Product Category</label>
+        <select id="c-category" name="category">
+          <option value="">Select a category&hellip;</option>
+          <option>Commercial Equipment &amp; Machinery</option>
+          <option>Packaging &amp; Printing</option>
+          <option>Material Handling</option>
+          <option>Luxury Travel Equipment's</option>
+          <option>Vehicle Parts &amp; Accessories</option>
+          <option>Metals &amp; Metal Scrap</option>
+          <option>Construction &amp; Building Machinery</option>
+          <option>Vehicles &amp; Transportation</option>
+          <option>Agricultural Machinery &amp; Equipment</option>
+          <option>Other / Not Sure</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label for="c-quantity">Quantity Required</label>
+        <input type="text" id="c-quantity" name="quantity" placeholder="e.g. 1,000 units" />
+      </div>
+
+      <div class="form-row">
+        <label for="c-message">Message</label>
+        <textarea id="c-message" name="message" rows="4" placeholder="Tell us what you're looking to source&hellip;"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block">Send Quote Request</button>
+      <p class="form-note" role="status"></p>
+
+      <!--
+        FORM SUBMISSION NOTE:
+        This form currently only validates in the browser (see script.js) and does not
+        send data anywhere. To actually receive submissions, either:
+          1. Add a "action" and "method" attribute and point it at a form backend
+             (e.g. Formspree, Netlify Forms, Basin), or
+          2. Wire up the fetch() call already stubbed in script.js to your own API.
+        See README.md for step-by-step instructions.
+      -->
+    </form>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <div class="brand">
+        <img src="assets/img/logo-placeholder.svg" alt="Global Trade Distributors logo" class="brand-logo" />
+        <span class="brand-text">
+          <span class="brand-name">Global Trade Distributors</span>
+          <span class="brand-tagline">Global B2B Sourcing &amp; Wholesale Distribution</span>
+        </span>
+      </div>
+      <p>Global Trade Distributors sources and wholesales industrial, commercial, and specialty products from vetted manufacturers worldwide, delivering to businesses across the globe.</p>
+      <p class="footer-reg">Global Trade Distributors Ltd &mdash; Registered in England &amp; Wales, Company No. [00000000]. Registered office: [Address Placeholder], United Kingdom.</p>
+    </div>
+
+    <div class="footer-links">
+      <h4 class="footer-links-title">Product Categories</h4>
+        <a href="commercial-equipment-machinery.html">Commercial Equipment &amp; Machinery</a>
+        <a href="packaging-printing.html">Packaging &amp; Printing</a>
+        <a href="material-handling.html">Material Handling</a>
+        <a href="luxury-travel-equipment.html">Luxury Travel Equipment&rsquo;s</a>
+        <a href="vehicle-parts-accessories.html">Vehicle Parts &amp; Accessories</a>
+        <a href="metals-metal-scrap.html">Metals &amp; Metal Scrap</a>
+        <a href="construction-building-machinery.html">Construction &amp; Building Machinery</a>
+        <a href="vehicles-transportation.html">Vehicles &amp; Transportation</a>
+        <a href="agricultural-machinery-equipment.html">Agricultural Machinery &amp; Equipment</a>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <a href="tel:+440000000000">+44 (0) 000 000 0000</a>
+      <a href="mailto:sales@globaltradedistributors.com">sales@globaltradedistributors.com</a>
+      <a href="https://wa.me/440000000000" target="_blank" rel="noopener">WhatsApp</a>
+      <span>United Kingdom</span>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>&copy; <span data-year></span> Global Trade Distributors Ltd. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- ============ STICKY QUOTE / WHATSAPP BUTTON ============ -->
+<div class="sticky-cta" id="sticky-cta">
+  <a href="contact.html#quote-form" class="sticky-btn sticky-quote" aria-label="Request a quote">
+    <span class="sticky-icon">&#128221;</span>
+    <span class="sticky-text">Request Quote</span>
+  </a>
+  <a href="https://wa.me/440000000000" target="_blank" rel="noopener" class="sticky-btn sticky-whatsapp" aria-label="Message us on WhatsApp">
+    <span class="sticky-icon">&#128172;</span>
+    <span class="sticky-text">WhatsApp</span>
+  </a>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
