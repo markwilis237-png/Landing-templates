@@ -1,0 +1,18 @@
+# Netlify config for the Global Trade Distributors site specifically.
+# Intended for a dedicated Netlify site whose "Base directory" is set to
+# global-trade-distributors/ (see README.md "Netlify setup" section) —
+# NOT for the repo-root site or any other template in this repo.
+
+[build]
+  # This site's actual folder in the repo is "global-trade-distributors"
+  # (NOT "b2b-wholesale-distributor-571m51" — that's the git branch name,
+  # not a directory that exists in the repo). Declaring "base" here makes
+  # the build self-describing even if the Netlify dashboard's own "Base
+  # directory" field is unset or wrong.
+  base = "global-trade-distributors"
+  # No build step — plain static HTML/CSS/JS, multi-page (each .html file
+  # is served directly at its own path, e.g. /about.html). The "command"
+  # key is intentionally omitted (an empty string can make some Netlify
+  # build images treat it as an invalid/failing build command) rather
+  # than left blank.
+  publish = "."
