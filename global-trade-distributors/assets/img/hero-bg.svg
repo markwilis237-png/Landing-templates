@@ -1,26 +1,105 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" preserveAspectRatio="xMidYMid slice">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0e2340"/>
-      <stop offset="100%" stop-color="#081627"/>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#081627"/>
+      <stop offset="55%" stop-color="#0e2340"/>
+      <stop offset="82%" stop-color="#4a3a2a"/>
+      <stop offset="100%" stop-color="#f5a623" stop-opacity="0.35"/>
     </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0b1d36"/>
+      <stop offset="100%" stop-color="#050d1a"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f5a623" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#f5a623" stop-opacity="0"/>
+    </radialGradient>
   </defs>
-  <rect width="1600" height="900" fill="url(#bg)"/>
-  <g fill="none" stroke="#b8905a" stroke-width="1" opacity="0.35">
-    <circle cx="800" cy="450" r="220"/>
-    <circle cx="800" cy="450" r="320"/>
-    <circle cx="800" cy="450" r="420"/>
-    <ellipse cx="800" cy="450" rx="420" ry="150"/>
-    <ellipse cx="800" cy="450" rx="420" ry="280"/>
-    <line x1="380" y1="450" x2="1220" y2="450"/>
-    <line x1="800" y1="30" x2="800" y2="870"/>
+
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <rect y="600" width="1600" height="300" fill="url(#water)"/>
+
+  <!-- water reflections -->
+  <g stroke="#f5a623" stroke-width="2" opacity="0.15">
+    <line x1="120" y1="660" x2="340" y2="660"/>
+    <line x1="700" y1="700" x2="1000" y2="700"/>
+    <line x1="1150" y1="680" x2="1380" y2="680"/>
+    <line x1="60" y1="760" x2="260" y2="760"/>
+    <line x1="900" y1="800" x2="1180" y2="800"/>
   </g>
-  <g fill="#b8905a" opacity="0.8">
-    <circle cx="500" cy="330" r="4"/>
-    <circle cx="980" cy="260" r="4"/>
-    <circle cx="1120" cy="520" r="4"/>
-    <circle cx="650" cy="600" r="4"/>
-    <circle cx="900" cy="640" r="4"/>
-    <circle cx="420" cy="520" r="4"/>
+
+  <!-- distant container ship, right side -->
+  <g transform="translate(980,470)" opacity="0.92">
+    <path d="M0 130 L40 130 L70 90 L430 90 L460 130 L500 130 L500 140 L0 140 Z" fill="#081020"/>
+    <g fill="#0e2340" stroke="#050d1a" stroke-width="2">
+      <rect x="60" y="55" width="42" height="35"/>
+      <rect x="106" y="45" width="42" height="45"/>
+      <rect x="152" y="55" width="42" height="35"/>
+      <rect x="198" y="40" width="42" height="50"/>
+      <rect x="244" y="55" width="42" height="35"/>
+      <rect x="290" y="48" width="42" height="42"/>
+      <rect x="336" y="55" width="42" height="35"/>
+    </g>
+    <rect x="382" y="20" width="26" height="70" fill="#081020"/>
+    <rect x="388" y="8" width="6" height="16" fill="#081020"/>
+  </g>
+
+  <!-- gantry crane 1 -->
+  <g transform="translate(230,150)" opacity="0.96">
+    <path d="M0 450 L40 60 L60 60 L60 450 Z" fill="#0a1a30"/>
+    <path d="M220 450 L180 60 L160 60 L160 450 Z" fill="#0a1a30"/>
+    <rect x="30" y="40" width="160" height="26" fill="#0a1a30"/>
+    <path d="M40 60 L-140 20 L-110 46 L40 86 Z" fill="#0a1a30"/>
+    <path d="M180 60 L360 96 L340 118 L180 88 Z" fill="#0a1a30"/>
+    <rect x="70" y="150" width="80" height="46" fill="#0a1a30"/>
+    <circle cx="-135" cy="24" r="6" fill="url(#glow)"/>
+    <circle cx="355" cy="100" r="6" fill="url(#glow)"/>
+    <circle cx="110" cy="48" r="5" fill="url(#glow)"/>
+  </g>
+
+  <!-- gantry crane 2, smaller/further -->
+  <g transform="translate(560,230) scale(0.7)" opacity="0.85">
+    <path d="M0 450 L40 60 L60 60 L60 450 Z" fill="#0a1a30"/>
+    <path d="M220 450 L180 60 L160 60 L160 450 Z" fill="#0a1a30"/>
+    <rect x="30" y="40" width="160" height="26" fill="#0a1a30"/>
+    <path d="M40 60 L-150 24 L-118 50 L40 86 Z" fill="#0a1a30"/>
+    <path d="M180 60 L380 100 L358 124 L180 88 Z" fill="#0a1a30"/>
+    <circle cx="-145" cy="28" r="7" fill="url(#glow)"/>
+    <circle cx="373" cy="104" r="7" fill="url(#glow)"/>
+  </g>
+
+  <!-- stacked containers, foreground left -->
+  <g transform="translate(0,600)">
+    <g stroke="#050d1a" stroke-width="3">
+      <rect x="-20" y="-150" width="120" height="46" fill="#173766"/>
+      <rect x="-20" y="-104" width="120" height="46" fill="#0e2340"/>
+      <rect x="-20" y="-58" width="120" height="46" fill="#f5a623" opacity="0.9"/>
+      <rect x="105" y="-104" width="120" height="46" fill="#0a1a30"/>
+      <rect x="105" y="-58" width="120" height="46" fill="#173766"/>
+      <rect x="230" y="-150" width="120" height="46" fill="#0e2340"/>
+      <rect x="230" y="-104" width="120" height="46" fill="#0a1a30"/>
+      <rect x="230" y="-58" width="120" height="46" fill="#173766"/>
+    </g>
+  </g>
+
+  <!-- stacked containers, foreground right -->
+  <g transform="translate(1260,600)">
+    <g stroke="#050d1a" stroke-width="3">
+      <rect x="0" y="-104" width="120" height="46" fill="#0e2340"/>
+      <rect x="0" y="-58" width="120" height="46" fill="#173766"/>
+      <rect x="125" y="-150" width="120" height="46" fill="#173766"/>
+      <rect x="125" y="-104" width="120" height="46" fill="#f5a623" opacity="0.85"/>
+      <rect x="125" y="-58" width="120" height="46" fill="#0a1a30"/>
+      <rect x="250" y="-104" width="90" height="46" fill="#0e2340"/>
+      <rect x="250" y="-58" width="90" height="46" fill="#173766"/>
+    </g>
+  </g>
+
+  <!-- scattered dock lights -->
+  <g>
+    <circle cx="420" cy="640" r="4" fill="url(#glow)"/>
+    <circle cx="760" cy="630" r="4" fill="url(#glow)"/>
+    <circle cx="1120" cy="640" r="4" fill="url(#glow)"/>
+    <circle cx="1500" cy="625" r="4" fill="url(#glow)"/>
   </g>
 </svg>

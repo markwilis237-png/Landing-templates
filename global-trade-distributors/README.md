@@ -2,9 +2,11 @@
 
 A multi-page catalog-style site for a global B2B sourcing and wholesale
 distribution company (UK-registered Ltd, multi-category, multi-country
-manufacturer network). Plain HTML/CSS/JS — no build step, no framework,
-matching the navy/gold trust-focused style used across this repo's
-templates (see `../reel-hook-tackle/`).
+manufacturer network). Plain HTML/CSS/JS — no build step, no framework.
+Styled with a navy/amber, photography-driven industrial look (hotlinked
+port/crane hero photo with an SVG illustration fallback, outlined-hexagon
+process icons) — a variant of the trust-focused style used across this
+repo's templates (see `../reel-hook-tackle/`).
 
 ## Files
 
@@ -22,7 +24,7 @@ metals-metal-scrap.html                    Category page
 construction-building-machinery.html       Category page
 vehicles-transportation.html               Category page
 agricultural-machinery-equipment.html      Category page
-styles.css                                 All styling — navy/gold theme, colors as CSS variables
+styles.css                                 All styling — navy/amber theme, colors as CSS variables
 script.js                                  Mobile nav, product gallery, query-param product fill, form validation
 assets/img/                                Placeholder SVGs — swap these for real photos/logo
 ```
@@ -80,10 +82,15 @@ added.
 2. **Logo** — replace `assets/img/logo-placeholder.svg` with your real
    logo (used in the header, footer, and favicon on every page).
 
-3. **Hero / banner background** — `assets/img/hero-bg.svg` is an abstract
-   navy/gold placeholder used behind the homepage hero and every interior
-   page banner. Swap for a real photo (warehouse, shipping, or product
-   photography) if you want something less abstract.
+3. **Hero photo** — the homepage hero (`index.html`, `#hero`) hotlinks a
+   real port/crane photo from Pexels via the `data-hero-src` attribute,
+   loaded by `initHeroImage()` in `script.js`. If that URL ever fails to
+   load, the local `assets/img/hero-bg.svg` (a stylized dusk port/crane
+   illustration) is used automatically as a fallback — it also shows
+   behind every interior page banner (`about.html`, `contact.html`,
+   `product.html`, and the category pages). Swap the `data-hero-src` URL
+   for your own licensed photo when ready; the interior page banners can
+   be updated the same way if you want a real photo there too.
 
 4. **Product photos** — `assets/img/product-placeholder.svg` is used for
    every product card (category pages) and the product gallery
@@ -132,7 +139,8 @@ added.
 
 10. **Colors & fonts** — open `styles.css` and edit the CSS variables at
     the top (`:root { ... }`). Every color and radius on the site is
-    driven from there.
+    driven from there — the accent color is `--color-amber` (with
+    `--color-amber-dark` for hover states).
 
 11. **Page titles & meta descriptions** — each page has its own
     `<title>` and `<meta name="description">` in its `<head>` — update
@@ -158,9 +166,10 @@ pattern used here):
 
 - Sticky header with logo, "Categories" dropdown (all 9 categories),
   and a prominent "Request a Quote" CTA
-- Homepage: hero, trust bar (UK Registered / Global Sourcing Network /
-  Verified Manufacturers), 9-category grid, "Source → Verify → Ship"
-  process section, CTA banner
+- Homepage: photo hero (real port/crane image with a dark overlay,
+  SVG-illustration fallback), trust bar (UK Registered / Global Sourcing
+  Network / Verified Manufacturers), 9-category grid, "Source → Verify →
+  Ship" process section with outlined-hexagon icons, CTA banner
 - Category page template (reused for all 9 categories): intro, 7–8
   sample products with "Request Quote" buttons, "1000+ more products —
   contact us" note

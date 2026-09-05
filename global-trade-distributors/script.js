@@ -6,6 +6,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   initYear();
   initMobileNav();
+  initHeroImage();
   initProductGallery();
   initProductFromQuery();
   initForms();
@@ -16,6 +17,22 @@ function initYear() {
   document.querySelectorAll('[data-year]').forEach((el) => {
     el.textContent = new Date().getFullYear();
   });
+}
+
+/* ---------- Hero background photo (with SVG fallback) ---------- */
+function initHeroImage() {
+  const hero = document.getElementById('hero');
+  const src = hero?.dataset.heroSrc;
+  if (!hero || !src) return;
+
+  const preload = new Image();
+  preload.onload = () => {
+    hero.style.backgroundImage =
+      `linear-gradient(180deg, rgba(8,22,39,0.68), rgba(8,22,39,0.88)), url('${src}')`;
+  };
+  // On error, do nothing — the local hero-bg.svg illustration set inline
+  // in the HTML stays as the background.
+  preload.src = src;
 }
 
 /* ---------- Mobile nav toggle (+ Categories dropdown on tap) ---------- */

@@ -60,7 +60,14 @@
 </header>
 
 <!-- ============ HERO ============ -->
-<section class="hero" id="hero" style="background-image: linear-gradient(180deg, rgba(8,22,39,0.80), rgba(8,22,39,0.90)), url('assets/img/hero-bg.svg');">
+<!--
+  Hero photo is hotlinked from Pexels (images.pexels.com) and loaded via
+  script.js with a fallback to the local hero-bg.svg illustration if the
+  photo ID ever changes or fails to load — see initHeroImage() in
+  script.js. Source: https://www.pexels.com/photo/industrial-port-with-maersk-container-ship-and-cranes-29822715/
+  Swap the data-hero-src URL below for your own licensed photo when ready.
+-->
+<section class="hero" id="hero" data-hero-src="https://images.pexels.com/photos/29822715/pexels-photo-29822715.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" style="background-image: linear-gradient(180deg, rgba(8,22,39,0.68), rgba(8,22,39,0.88)), url('assets/img/hero-bg.svg');">
   <div class="container hero-inner">
     <p class="hero-eyebrow">UK-Registered Wholesale Distributor</p>
     <h1 class="hero-title">Global Trade Distributors</h1>
@@ -170,7 +177,7 @@
 </section>
 
 <!-- ============ HOW WE WORK ============ -->
-<section class="section section-alt">
+<section class="section">
   <div class="container">
     <div class="section-head">
       <p class="eyebrow">How We Work</p>
@@ -180,20 +187,20 @@
 
     <div class="steps-grid">
       <div class="step-card">
-        <div class="step-number">1</div>
-        <div class="step-icon" aria-hidden="true">&#128269;</div>
+        <div class="hex-icon"><span class="hex-icon-inner" aria-hidden="true">&#128269;</span></div>
+        <span class="step-label">Step 1</span>
         <h3>Source</h3>
         <p>We identify vetted manufacturers across our global network that match your product specification and target price.</p>
       </div>
       <div class="step-card">
-        <div class="step-number">2</div>
-        <div class="step-icon" aria-hidden="true">&#9989;</div>
+        <div class="hex-icon"><span class="hex-icon-inner" aria-hidden="true">&#9989;</span></div>
+        <span class="step-label">Step 2</span>
         <h3>Verify</h3>
         <p>Every supplier and order batch goes through quality checks and compliance verification before it ships.</p>
       </div>
       <div class="step-card">
-        <div class="step-number">3</div>
-        <div class="step-icon" aria-hidden="true">&#128674;</div>
+        <div class="hex-icon"><span class="hex-icon-inner" aria-hidden="true">&#128674;</span></div>
+        <span class="step-label">Step 3</span>
         <h3>Ship</h3>
         <p>We coordinate logistics, documentation, and customs handling for smooth delivery to your business, worldwide.</p>
       </div>

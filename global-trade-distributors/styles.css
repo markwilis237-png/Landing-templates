@@ -1,7 +1,7 @@
 /* =============================================================
    Global Trade Distributors — B2B Wholesale Distribution Site
    -------------------------------------------------------------
-   Navy / gold theme, matching the Reel Hook Tackle build.
+   Navy / amber theme — photography-driven industrial look.
    Brand colors live in the CSS variables below.
    ============================================================= */
 
@@ -11,7 +11,8 @@
   --color-navy-mid: #173766;
   --color-navy-light: #eef2fa;
   --color-white: #ffffff;
-  --color-gold: #b8905a;
+  --color-amber: #f5a623;
+  --color-amber-dark: #d98a0e;
   --color-text: #1c2530;
   --color-text-muted: #5c6b80;
   --color-bg: #ffffff;
@@ -69,11 +70,11 @@ table { border-collapse: collapse; width: 100%; }
 }
 .btn:hover { transform: translateY(-2px); }
 .btn-primary {
-  background: var(--color-gold);
+  background: var(--color-amber);
   color: #fff;
   box-shadow: var(--shadow);
 }
-.btn-primary:hover { background: #a37c47; }
+.btn-primary:hover { background: var(--color-amber-dark); }
 .btn-secondary {
   background: transparent;
   color: #fff;
@@ -113,19 +114,19 @@ table { border-collapse: collapse; width: 100%; }
 .brand-logo { height: 40px; width: 40px; }
 .brand-text { display: flex; flex-direction: column; line-height: 1.1; }
 .brand-name { font-family: var(--font-heading); font-weight: 800; font-size: 1.1rem; color: var(--color-navy); }
-.brand-tagline { font-size: 0.72rem; color: var(--color-gold); font-weight: 600; letter-spacing: 0.03em; }
+.brand-tagline { font-size: 0.72rem; color: var(--color-amber); font-weight: 600; letter-spacing: 0.03em; }
 
 .main-nav { display: flex; align-items: center; gap: 24px; }
 .main-nav a:not(.nav-cta) { font-weight: 500; color: var(--color-text); }
 .main-nav a:not(.nav-cta):hover { color: var(--color-navy-mid); }
 .nav-cta {
-  background: var(--color-gold);
+  background: var(--color-amber);
   color: #fff !important;
   padding: 10px 18px;
   border-radius: 999px;
   font-weight: 600;
 }
-.nav-cta:hover { background: #a37c47; }
+.nav-cta:hover { background: var(--color-amber-dark); }
 
 .nav-dropdown { position: relative; }
 .nav-dropdown-toggle { display: flex; align-items: center; gap: 4px; background: none; border: none; font: inherit; font-weight: 500; color: var(--color-text); padding: 0; }
@@ -170,6 +171,7 @@ table { border-collapse: collapse; width: 100%; }
 
 /* ---------- Hero (homepage) ---------- */
 .hero {
+  background-color: var(--color-navy-dark);
   background-size: cover;
   background-position: center;
   color: #fff;
@@ -181,7 +183,7 @@ table { border-collapse: collapse; width: 100%; }
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: var(--color-amber);
   margin-bottom: 14px;
   font-size: 0.85rem;
 }
@@ -240,7 +242,7 @@ table { border-collapse: collapse; width: 100%; }
   color: rgba(255,255,255,0.75);
 }
 .breadcrumb a { color: rgba(255,255,255,0.9); font-weight: 500; }
-.breadcrumb a:hover { color: var(--color-gold); }
+.breadcrumb a:hover { color: var(--color-amber); }
 .breadcrumb span { margin: 0 6px; }
 .breadcrumb .current { color: #fff; font-weight: 600; }
 
@@ -253,7 +255,7 @@ table { border-collapse: collapse; width: 100%; }
   letter-spacing: 0.08em;
   font-weight: 700;
   font-size: 0.8rem;
-  color: var(--color-gold);
+  color: var(--color-amber);
   margin-bottom: 8px;
 }
 .section-sub { color: var(--color-text-muted); }
@@ -299,7 +301,7 @@ table { border-collapse: collapse; width: 100%; }
 .category-card h3 { font-size: 1.08rem; margin-bottom: 8px; }
 .category-card p { color: var(--color-text-muted); font-size: 0.88rem; margin-bottom: 16px; }
 .category-link { font-weight: 700; color: var(--color-navy); font-size: 0.9rem; }
-.category-link:hover { color: var(--color-gold); }
+.category-link:hover { color: var(--color-amber); }
 
 /* ---------- How We Work / Steps ---------- */
 .steps-grid {
@@ -308,21 +310,40 @@ table { border-collapse: collapse; width: 100%; }
   gap: 30px;
 }
 .step-card { text-align: center; position: relative; }
-.step-number {
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
+
+/* Outlined hexagon icon container — two nested clipped layers act as a
+   flat-color border (outer = navy, inner = white) around the emoji icon. */
+.hex-icon {
+  width: 92px;
+  height: 92px;
+  margin: 0 auto 18px;
   background: var(--color-navy);
-  color: #fff;
-  font-family: var(--font-heading);
-  font-weight: 800;
+  clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 16px;
-  font-size: 1.1rem;
+  transition: background 0.2s ease;
 }
-.step-icon { font-size: 1.6rem; margin-bottom: 10px; }
+.step-card:hover .hex-icon { background: var(--color-amber); }
+.hex-icon-inner {
+  width: calc(100% - 7px);
+  height: calc(100% - 7px);
+  background: #fff;
+  clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.9rem;
+}
+.step-label {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  font-size: 0.78rem;
+  color: var(--color-amber);
+  margin-bottom: 6px;
+}
 .step-card h3 { font-size: 1.1rem; margin-bottom: 8px; }
 .step-card p { color: var(--color-text-muted); font-size: 0.92rem; margin: 0; }
 
@@ -340,7 +361,7 @@ table { border-collapse: collapse; width: 100%; }
 .catalog-note {
   margin-top: 40px;
   background: var(--color-bg-alt);
-  border: 1px dashed var(--color-gold);
+  border: 1px dashed var(--color-amber);
   border-radius: var(--radius);
   padding: 24px 28px;
   text-align: center;
@@ -380,7 +401,7 @@ table { border-collapse: collapse; width: 100%; }
 }
 .product-body h4 { font-size: 1.04rem; margin-bottom: 14px; flex: 1; }
 .product-body h4 a { color: var(--color-navy); }
-.product-body h4 a:hover { color: var(--color-gold); }
+.product-body h4 a:hover { color: var(--color-amber); }
 .product-footer { display: flex; }
 
 /* ---------- Product detail page ---------- */
@@ -412,7 +433,7 @@ table { border-collapse: collapse; width: 100%; }
   background: none;
   aspect-ratio: 1 / 1;
 }
-.product-gallery-thumbs button.is-active { border-color: var(--color-gold); }
+.product-gallery-thumbs button.is-active { border-color: var(--color-amber); }
 .product-gallery-thumbs img { width: 100%; height: 100%; object-fit: cover; }
 
 .product-info h1 { font-size: clamp(1.5rem, 3vw, 1.9rem); margin-bottom: 8px; }
@@ -462,7 +483,7 @@ table { border-collapse: collapse; width: 100%; }
   color: var(--color-text-muted);
 }
 .contact-method a, .contact-method span.value { font-weight: 600; color: var(--color-navy); }
-.contact-method a:hover { color: var(--color-gold); }
+.contact-method a:hover { color: var(--color-amber); }
 
 .map-embed { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--color-border); }
 .map-embed iframe { display: block; }
@@ -548,7 +569,7 @@ table { border-collapse: collapse; width: 100%; }
   border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 .site-footer .brand-name { color: #fff; }
-.site-footer .brand-tagline { color: var(--color-gold); }
+.site-footer .brand-tagline { color: var(--color-amber); }
 .site-footer p { color: #9fb0ca; font-size: 0.92rem; }
 .footer-reg { font-size: 0.82rem; color: #7f90ab; margin-top: 14px; }
 .footer-links h4, .footer-contact h4 { color: #fff; font-size: 0.95rem; margin-bottom: 14px; }
@@ -580,7 +601,7 @@ table { border-collapse: collapse; width: 100%; }
   transition: transform 0.15s ease;
 }
 .sticky-btn:hover { transform: translateY(-2px) scale(1.02); }
-.sticky-quote { background: var(--color-gold); }
+.sticky-quote { background: var(--color-amber); }
 .sticky-whatsapp { background: #25d366; }
 .sticky-icon { font-size: 1.1rem; }
 
